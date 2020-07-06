@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>ClientesApp</title>
+	<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+<body>
+	<h1>Cliente</h1>
+	
+	<div th:each="cliente : ${cliente}" class="container">
+		<div class="row">
+			<p>Nome <span th:text="${cliente.nomeCompleto}"></span></p>
+			<p>Sexo <span th:text="${cliente.sexo}"></span></p>
+			<p>Data <span th:text="${cliente.data}"></span></p>
+			<p>Idade <span th:text="${cliente.idade}"></span></p>
+	</div>
+	
+	<div class="container" th:each="cidade : ${cidade}">
+		<p>Cidade <span th:text="${cidade.nome}"></span></p>
+	</div>	
+	
+	<h3><a href="/clientes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Clientes</a></h3>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+
+</html>
